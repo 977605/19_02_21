@@ -24,7 +24,6 @@ allure {
 
 dependencies {
     compile("com.codeborne:selenide:5.18.0")
-    compile("io.qameta.allure:allure-java-commons:2.13.8")
     compile("io.qameta.allure:allure-selenide:2.13.8")
     compile("com.github.javafaker:javafaker:1.0.2")
     compile("org.hamcrest:hamcrest-all:1.3")
