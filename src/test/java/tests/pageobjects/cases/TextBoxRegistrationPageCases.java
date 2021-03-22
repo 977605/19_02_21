@@ -1,6 +1,7 @@
 package tests.pageobjects.cases;
 
 import com.github.javafaker.Faker;
+import io.qameta.allure.Step;
 import tests.Data;
 
 import java.io.File;
@@ -22,6 +23,7 @@ public class TextBoxRegistrationPageCases {
             monthOfBirth = "May",
             yearOfBirth = "1988";
 
+    @Step("Открываем страницу и проверяем, что форма имеет заголовок Practice Form")
     public void openPage() {
 
         open("https://demoqa.com/automation-practice-form");
@@ -29,6 +31,7 @@ public class TextBoxRegistrationPageCases {
 
     }
 
+    @Step("Заполняем форму")
     public void fillForm() {
 
         $("#firstName").setValue(data.getFirstName());
@@ -58,6 +61,7 @@ public class TextBoxRegistrationPageCases {
 
     }
 
+    @Step("Поверяем корректность заполения формы данными")
     public void checkData() {
 
         $(".modal-header").shouldHave(text("Thanks for submitting the form"));

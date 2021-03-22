@@ -5,7 +5,6 @@ import com.github.javafaker.Faker;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import tests.Data;
-import tests.TestBase;
 
 import java.io.File;
 
