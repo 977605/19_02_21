@@ -3,6 +3,7 @@ package tests;
 import com.codeborne.selenide.Configuration;
 import io.qameta.allure.Step;
 import io.qameta.allure.selenide.AllureSelenide;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 
 import java.io.File;
@@ -12,6 +13,7 @@ import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.Selenide.$$;
 import static com.codeborne.selenide.logevents.SelenideLogger.addListener;
+import static helpers.AttachmentHelper.*;
 
 public class TestBase {
 
@@ -21,7 +23,6 @@ public class TestBase {
         Configuration.startMaximized = true;
         Configuration.remote = "https://user1:1234@selenoid.autotests.cloud:4444/wd/hub/";
     }
-
 
     @Step("Открываем страницу и проверяем, что форма имеет заголовок Practice Form")
     public void openPageAndCheckTitle(String url, String form_title) {
@@ -74,5 +75,12 @@ public class TestBase {
         $$(".table-responsive tr").filterBy(text("Picture")).shouldHave(texts("1.jpg"));
         $$(".table-responsive tr").filterBy(text("Address")).shouldHave(texts(data.getCurrentAddress()));
         $$(".table-responsive tr").filterBy(text("State and City")).shouldHave(texts(data.getState() + " " + data.getCity()));
+    }
+
+    @AfterEach
+    public void afterEach() {
+        attachScreenshot("Last screenshot");
+        attachPageSource();
+        attachAsText("Browser console logs", getConsoleLogs());
     }
 }
