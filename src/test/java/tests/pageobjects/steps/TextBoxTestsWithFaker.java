@@ -78,5 +78,13 @@ public class TextBoxTestsWithFaker {
         $$(".table-responsive tr").filterBy(text("State and City")).shouldHave(texts(data.getState() + " " + data.getCity()));
     }
 
+    @Test
+    void negativedDataAppearsTestForPracticeFormWithFaker() {
+
+        open("https://demoqa.com/automation-practice-form");
+        textBoxRegistrationPage.checkPageHeader("Practice Form");
+        $("#submit").click();
+        $("#example-modal-sizes-title-lg").shouldHave(text("Thanks for submitting the form"));
+    }
 }
 
