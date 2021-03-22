@@ -1,10 +1,9 @@
 package tests.pageobjects.steps;
 
-import com.codeborne.selenide.Configuration;
 import com.github.javafaker.Faker;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import tests.Data;
+import tests.TestBase;
 
 import java.io.File;
 
@@ -12,7 +11,7 @@ import static com.codeborne.selenide.CollectionCondition.texts;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.*;
 
-public class TextBoxTestsWithFaker {
+public class TextBoxTestsWithFaker extends TestBase {
 
     TextBoxRegistrationPage textBoxRegistrationPage = new TextBoxRegistrationPage();
 
@@ -27,11 +26,6 @@ public class TextBoxTestsWithFaker {
     String dayOfBirth = "10",
             monthOfBirth = "May",
             yearOfBirth = "1988";
-
-    @BeforeAll
-    static void setup() {
-        Configuration.startMaximized = true;
-    }
 
     @Test
     void dataAppearsTestForPracticeFormWithFaker() {
