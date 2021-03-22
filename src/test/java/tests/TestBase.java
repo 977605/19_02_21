@@ -3,6 +3,7 @@ package tests;
 import com.codeborne.selenide.Configuration;
 import io.qameta.allure.Step;
 import org.junit.jupiter.api.BeforeAll;
+import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.io.File;
 
@@ -16,7 +17,9 @@ public class TestBase {
     @BeforeAll
     static void setup() {
         Configuration.startMaximized = true;
+        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud:4444/wd/hub/";
     }
+
 
     @Step("Открываем страницу и проверяем, что форма имеет заголовок Practice Form")
     public void openPageAndCheckTitle(String url, String form_title) {

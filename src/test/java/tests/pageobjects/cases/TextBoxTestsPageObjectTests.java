@@ -3,7 +3,7 @@ package tests.pageobjects.cases;
 import org.junit.jupiter.api.Test;
 import tests.TestBase;
 
-public class TextBoxTestsPageObjectTests extends TestBase{
+public class TextBoxTestsPageObjectTests extends TestBase {
 
     TextBoxRegistrationPageCases textBoxRegistrationPageCases = new TextBoxRegistrationPageCases();
 
