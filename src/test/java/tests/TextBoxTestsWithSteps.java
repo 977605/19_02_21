@@ -1,6 +1,7 @@
 package tests;
 
 import com.github.javafaker.Faker;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 public class TextBoxTestsWithSteps {
@@ -31,5 +32,13 @@ public class TextBoxTestsWithSteps {
 
     }
 
+    @Tag("negative")
+    @Test
+    void negativeDataAppearsTestForPracticeFormWithSteps() {
+
+        steps.openPageAndCheckTitle(URL, FORM_TITLE);
+        steps.submitForm();
+        steps.checkDataInForm(data);
+    }
 }
 
