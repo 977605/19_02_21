@@ -32,6 +32,9 @@ dependencies {
     compile("org.junit.jupiter:junit-jupiter-engine:5.7.0")
     compile("org.junit.jupiter:junit-jupiter-params:5.7.0")
 }
+tasks.withType(Test) {
+    systemProperties += System.properties
+}
 
 test {
     useJUnitPlatform()

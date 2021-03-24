@@ -22,6 +22,7 @@ public class TestBase {
     static void setup() {
         addListener("AllureSelenide", new AllureSelenide().screenshots(true).savePageSource(true));
         Configuration.startMaximized = true;
+        Configuration.browser = System.getProperty("browser", "chrome");
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("enableVNC", true);
         capabilities.setCapability("enableVideo", true);
