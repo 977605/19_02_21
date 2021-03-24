@@ -1,6 +1,8 @@
 package tests.pageobjects.steps;
 
 import com.github.javafaker.Faker;
+import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.api.Tags;
 import org.junit.jupiter.api.Test;
 import tests.Data;
 import tests.TestBase;
@@ -72,6 +74,7 @@ public class TextBoxTestsWithFaker extends TestBase {
     }
 
     @Test
+    @Tag("negative")
     void negativedDataAppearsTestForPracticeFormWithFaker() {
 
         open("https://demoqa.com/automation-practice-form");
